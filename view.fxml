@@ -1,0 +1,2746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="1359.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ge.controller">
+   <children>
+      <AnchorPane fx:id="pnlAdministracao" layoutX="279.0" layoutY="160.0" prefHeight="193.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <JFXTextField fx:id="txtNomeCompletoAdministracao" focusColor="#0a0a75" labelFloat="true" layoutX="39.0" layoutY="70.0" onKeyReleased="#buscarAlunosTabelaDividas" prefHeight="25.0" prefWidth="174.0" promptText="Nome Completo" unFocusColor="ORANGERED" />
+            <Label fx:id="lblPercentagemHomem12131" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnGuardarDadosAdministracao" buttonType="RAISED" layoutX="530.0" layoutY="145.0" onMouseClicked="#GuardarDadosAdministracao" prefHeight="34.0" prefWidth="202.0" ripplerFill="WHITE" style="-fx-background-color: #0a0a75;" text="Guardar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblPercentagemMulher11131" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="tbnSairAdministracao" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Administração" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fitHeight="27.0" fitWidth="37.0" layoutX="549.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_save_48px_2.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <JFXComboBox fx:id="cmbTipoDeUsuarioAdminstracao" focusColor="#0a0a75" layoutX="596.0" layoutY="72.0" onMouseClicked="#buscarDividasTabela" prefHeight="25.0" prefWidth="136.0" promptText="Tipo de usuário" unFocusColor="ORANGERED" />
+            <JFXTextField fx:id="txtFuncaoAdministracao" focusColor="#0a0a75" labelFloat="true" layoutX="232.0" layoutY="72.0" onKeyReleased="#buscarAlunosTabelaDividas" prefHeight="25.0" prefWidth="174.0" promptText="Função" unFocusColor="ORANGERED" />
+            <JFXTextField fx:id="txtPalavraPasseAdministracao" focusColor="#0a0a75" labelFloat="true" layoutX="439.0" layoutY="72.0" onKeyReleased="#buscarAlunosTabelaDividas" prefHeight="25.0" prefWidth="111.0" promptText="Palavra-Passe" unFocusColor="ORANGERED" />
+            <Separator layoutX="-2.0" layoutY="125.0" prefHeight="3.0" prefWidth="809.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlDividasMensalidade" layoutX="284.0" layoutY="196.0" prefHeight="239.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <JFXTextField fx:id="txtBusdcarAlunoDividasMensalidade" focusColor="#0a0a75" labelFloat="true" layoutX="580.0" layoutY="50.0" onKeyReleased="#buscarAlunosTabelaDividas" prefHeight="25.0" prefWidth="174.0" promptText="Pesquisar..." unFocusColor="ORANGERED" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="729.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_search_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <Label fx:id="lblPercentagemHomem1213" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnImprimir" buttonType="RAISED" layoutX="532.0" layoutY="106.0" onMouseClicked="#ImprimirRelatorioDevedores" prefHeight="111.0" prefWidth="131.0" ripplerFill="#f53131" />
+            <Label fx:id="lblPercentagemMulher1113" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlDividasMensalidade" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Adicionar Individual" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TableView fx:id="btl_ListaDosDevedoresMensalidade" layoutX="1.0" layoutY="44.0" onMouseClicked="#SelecionarTabela" prefHeight="183.0" prefWidth="375.0" style="-fx-background-color: white;">
+               <columns>
+                  <TableColumn fx:id="col_IdAlunoPagoDividas" prefWidth="68.0" text="Nome" />
+                  <TableColumn fx:id="col_NomePagoDividas" prefWidth="202.0" text="Classe" />
+                  <TableColumn fx:id="col_UltimoMesPagoDividas" prefWidth="104.0" text="Sala" />
+               </columns>
+            </TableView>
+            <Pane layoutY="40.0" prefHeight="30.0" prefWidth="375.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Label layoutX="14.0" layoutY="4.0" text="Numero" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="279.0" layoutY="4.0" text="Último mês" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="158.0" layoutY="4.0" text="Nome" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fitHeight="55.0" fitWidth="62.0" layoutX="570.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_refresh_60px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <JFXComboBox fx:id="cmbFiltrarAlunosDividasMensalidade" focusColor="#0a0a75" layoutX="388.0" layoutY="52.0" onMouseClicked="#buscarDividasTabela" prefHeight="25.0" prefWidth="136.0" promptText="Filtrar por..." unFocusColor="ORANGERED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlPagamentoDiversos" layoutX="279.0" layoutY="150.0" prefHeight="285.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutX="10.0" layoutY="85.0" prefHeight="183.0" prefWidth="752.0" style="-fx-background-color: white; -fx-border-color: orangered;">
+               <children>
+                  <JFXButton fx:id="btnPagarDiversos" layoutX="432.0" layoutY="139.0" onMouseClicked="#PagarDiversos" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="450.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_done_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Label layoutX="41.0" layoutY="44.0" text="Nome &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNomePagarDiversos" layoutX="109.0" layoutY="44.0" prefHeight="21.0" prefWidth="266.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="65.0" text="Classe &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblClassePagarDiversos" alignment="CENTER" layoutX="119.0" layoutY="65.0" prefHeight="21.0" prefWidth="68.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="390.0" layoutY="14.0" orientation="VERTICAL" prefHeight="82.0" prefWidth="6.0" />
+                  <Label fx:id="lblDescricaoPagarDiversos" layoutX="508.0" layoutY="36.0" prefHeight="21.0" prefWidth="155.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPrecoPagarDiversos" alignment="CENTER" layoutX="512.0" layoutY="65.0" prefHeight="21.0" prefWidth="147.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="33.0" prefHeight="3.0" prefWidth="752.0" />
+                  <Label layoutX="130.0" layoutY="10.0" text="Dados Acadêmicos" textFill="#515151">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="95.0" prefHeight="3.0" prefWidth="752.0" />
+                  <Label layoutX="409.0" layoutY="36.0" text="Pagar  &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="409.0" layoutY="65.0" text="Preço  &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="cmbFiltrarDescricoesPagarDiversos" focusColor="#0a0a75" layoutX="43.0" layoutY="142.0" onMouseClicked="#buscarDadosPagamentosDiversos" prefHeight="25.0" prefWidth="164.0" promptText="selecione o que pagar..." unFocusColor="ORANGERED" />
+                  <JFXTextField fx:id="txtQtdPagarDiversos" focusColor="#0a0a75" labelFloat="true" layoutX="235.0" layoutY="142.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="94.0" promptText="Quantidade" unFocusColor="ORANGERED" />
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtBuscarAlunoPagarDiversos" focusColor="#0a0a75" labelFloat="true" layoutX="580.0" layoutY="50.0" onKeyReleased="#buscarAlunosDiversosPagamentos" prefHeight="25.0" prefWidth="174.0" promptText="Buscar aluno/a" unFocusColor="ORANGERED" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="729.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_search_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <Label fx:id="lblPercentagemHomem12121" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher11121" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlPagarDiversos" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Pagamento de diversos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_diversity_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <JFXButton fx:id="btnVerDividasMensalidade1" layoutX="14.0" layoutY="48.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: orangered;" text="          Dívidas" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="31.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_debt_52px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlPagamentoMensalidade" layoutX="269.0" layoutY="140.0" prefHeight="285.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutX="10.0" layoutY="85.0" prefHeight="183.0" prefWidth="752.0" style="-fx-background-color: white; -fx-border-color: orangered;">
+               <children>
+                  <JFXButton fx:id="btnPagarMensalidade" layoutX="432.0" layoutY="139.0" onMouseClicked="#PagarMensalidade" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" text="Pagar a mensalidade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="450.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_done_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Label layoutX="41.0" layoutY="44.0" text="Nome &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNomeMensalidade" layoutX="109.0" layoutY="44.0" prefHeight="21.0" prefWidth="266.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="65.0" text="Classe &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblClasseMensalidade" alignment="CENTER" layoutX="119.0" layoutY="65.0" prefHeight="21.0" prefWidth="68.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="390.0" layoutY="14.0" orientation="VERTICAL" prefHeight="82.0" prefWidth="6.0" />
+                  <Label layoutX="429.0" layoutY="55.0" text="Último mês pago&gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblUltimoMesPago" layoutX="586.0" layoutY="55.0" prefHeight="21.0" prefWidth="155.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="33.0" prefHeight="3.0" prefWidth="752.0" />
+                  <Label layoutX="130.0" layoutY="10.0" text="Dados Acadêmicos" textFill="#515151">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="493.0" layoutY="10.0" text="Dados Finânceiros" textFill="#515151">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="95.0" prefHeight="3.0" prefWidth="752.0" />
+                  <JFXRadioButton fx:id="rdMultar" layoutX="242.0" layoutY="136.0" text="Adicionar multa" textFill="#0a0a75" />
+                  <JFXComboBox fx:id="cmbMesAPagar" focusColor="#0a0a75" layoutX="34.0" layoutY="125.0" prefHeight="25.0" prefWidth="136.0" promptText="Seleciona o mês" unFocusColor="ORANGERED" />
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtBuscarAlunoMensalidade" focusColor="#0a0a75" labelFloat="true" layoutX="580.0" layoutY="50.0" onKeyReleased="#buscarAluno" prefHeight="25.0" prefWidth="174.0" promptText="Buscar aluno/a" unFocusColor="ORANGERED" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="729.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_search_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <Label fx:id="lblPercentagemHomem1212" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher1112" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlPagamentoMensalidade" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Pagamento de mensalidade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_money_48px_1.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <JFXButton fx:id="btnVerDividasMensalidade" layoutX="14.0" layoutY="48.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="128.0" style="-fx-background-color: orangered;" text="          Dívidas" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="31.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_debt_52px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlNovoAnoLectivo" layoutX="315.0" layoutY="147.0" prefHeight="105.0" prefWidth="676.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="lblPercentagemHomem121212" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher111212" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="675.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairNovoAnoLectivo" layoutX="594.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Voltar" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Novo Ano Lectivo" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Add_Property_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnDefinirAnoLectivoEntrar" layoutX="282.0" layoutY="7.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: orangered;" text="      Definir ano lectivo" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="293.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_product_management_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <JFXButton fx:id="btnGuardarAnoLectivo" layoutX="339.0" layoutY="51.0" onMouseClicked="#criarAnoLectivo" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" text="Criar Ano Lectivo" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="357.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_save_48px_2.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <JFXTextField fx:id="txtNovoAnoLectivo" focusColor="#0a0a75" labelFloat="true" layoutX="59.0" layoutY="54.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="116.0" promptText="Ano lectivo..." unFocusColor="ORANGERED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlDefinirAnoLectivo" layoutX="325.0" layoutY="157.0" prefHeight="105.0" prefWidth="676.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="lblPercentagemHomem1212121" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher1112121" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="675.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairDefinirAnoLectivo" layoutX="594.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Voltar" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Definir ano lectivo" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_product_management_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Pane layoutX="262.0" prefHeight="21.0" prefWidth="164.0" style="-fx-background-color: orangered;">
+                     <children>
+                        <Label layoutX="15.0" layoutY="1.0" text="Ano lectivo definido" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label fx:id="lblAnoLectivoActual" alignment="CENTER" contentDisplay="CENTER" layoutX="257.0" layoutY="19.0" prefHeight="20.0" prefWidth="174.0" text="2022/2023" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXButton fx:id="btnGuardarAnoLectivo1" layoutX="339.0" layoutY="51.0" onMouseClicked="#definirAnoLectivo" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" text="Definir" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="357.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_settings_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <JFXComboBox fx:id="cmbAnoLetivoDefinir" focusColor="ORANGERED" layoutX="60.0" layoutY="54.0" prefHeight="25.0" prefWidth="155.0" promptText="Escolher ano lectivo" unFocusColor="#0a0a75" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlTabelaDePrecoDiversos" layoutX="278.0" layoutY="158.0" prefHeight="239.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutX="314.0" layoutY="50.0" prefHeight="157.0" prefWidth="470.0" style="-fx-background-color: white; -fx-border-color: orangered;">
+               <children>
+                  <JFXTextField fx:id="txtPrecoTabelaPrecoDiversos" focusColor="#0a0a75" labelFloat="true" layoutX="321.0" layoutY="54.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="114.0" promptText="Preço" unFocusColor="ORANGERED" />
+                  <JFXButton fx:id="btnGuardarTabelaPrecoDiversos" layoutX="72.0" layoutY="113.0" onMouseClicked="#TabelaPrecoDiversos" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" text="Guardar o preço" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="90.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_done_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Separator layoutX="11.0" layoutY="90.0" prefHeight="3.0" prefWidth="440.0" />
+                  <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="30.0" prefWidth="470.0" style="-fx-background-color: orangered;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="4.0" text="Definir novo preço" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXTextField fx:id="txtDescricacaoTabelaPrecoDiversos" focusColor="#0a0a75" labelFloat="true" layoutX="15.0" layoutY="54.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="278.0" promptText="Descrição" unFocusColor="ORANGERED" />
+               </children>
+            </Pane>
+            <Label fx:id="lblPercentagemHomem1212111" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher1112111" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlTabelaDePrecoDiversos" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Tabela de preços de diversos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_diversity_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TableView fx:id="tbl_TabelaPrecosDiversos" layoutY="54.0" onMouseClicked="#SelecionarTabela" prefHeight="157.0" prefWidth="297.0" style="-fx-background-color: white;">
+               <columns>
+                  <TableColumn fx:id="col_descricaoTabelaPrecos" prefWidth="100.0" text="C1" />
+                  <TableColumn fx:id="col_diversosTabelaPreco" prefWidth="196.0" text="C2" />
+               </columns>
+            </TableView>
+            <Pane layoutX="-1.0" layoutY="53.0" prefHeight="30.0" prefWidth="297.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Label layoutX="69.0" layoutY="4.0" text="Descrição" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="4.0" text="Preço Unit" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlTabelaDePrecoMensalidade" layoutX="286.0" layoutY="160.0" prefHeight="227.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutX="314.0" layoutY="50.0" prefHeight="157.0" prefWidth="470.0" style="-fx-background-color: white; -fx-border-color: orangered;">
+               <children>
+                  <JFXComboBox fx:id="cmbClasseTabelaPreco" focusColor="#0a0a75" layoutX="72.0" layoutY="54.0" prefHeight="25.0" prefWidth="164.0" promptText="selecione a classe" unFocusColor="ORANGERED" />
+                  <JFXTextField fx:id="txtPrecoTabelaPreco" focusColor="#0a0a75" labelFloat="true" layoutX="264.0" layoutY="54.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="114.0" promptText="Preço" unFocusColor="ORANGERED" />
+                  <JFXButton fx:id="btnGuardarTabelaPreco" layoutX="72.0" layoutY="113.0" onMouseClicked="#TabelaPreco" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" text="Guardar o preço" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="90.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_done_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Separator layoutX="11.0" layoutY="90.0" prefHeight="3.0" prefWidth="440.0" />
+                  <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="30.0" prefWidth="470.0" style="-fx-background-color: orangered;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="4.0" text="Definir novo preço" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Label fx:id="lblPercentagemHomem121211" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher111211" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlTabelaDePrecoMensalidade" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Tabela de preços de mensalidade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_bill_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TableView fx:id="tbl_TabelaPrecos" layoutX="7.0" layoutY="55.0" prefHeight="157.0" prefWidth="297.0" style="-fx-background-color: white;">
+              <columns>
+                <TableColumn fx:id="col_classeTabelaPrecos" prefWidth="100.0" text="C1" />
+                <TableColumn fx:id="col_mensalidadeTabelaPreco" prefWidth="196.0" text="C2" />
+              </columns>
+            </TableView>
+            <Pane layoutX="6.0" layoutY="37.0" prefHeight="43.0" prefWidth="297.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Label layoutX="14.0" layoutY="12.0" text="Classe" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="149.0" layoutY="12.0" text="Mensalidade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlListatudante" layoutX="165.0" layoutY="125.0" prefHeight="488.0" prefWidth="1010.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="btnAlterarEntrar" layoutX="180.0" layoutY="76.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Alterar" textFill="WHITE" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="192.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_Pencil_128px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <TableView fx:id="tbl_AlunosLista" blendMode="DARKEN" layoutX="4.0" layoutY="136.0" onMousePressed="#SelecionarTabela" prefHeight="353.0" prefWidth="1005.0" style="-fx-background-color: white;">
+              <columns>
+                <TableColumn fx:id="col_idAluno" prefWidth="55.99998474121094" text="ID" />
+                <TableColumn fx:id="col_nomeAluno" prefWidth="235.99998474121094" text="Nome" />
+                  <TableColumn fx:id="col_idadeAluno" prefWidth="59.0" text="IDADE" />
+                  <TableColumn fx:id="col_sexoAluno" prefWidth="99.0" text="Sexo" />
+                  <TableColumn fx:id="col_encarregadoAluno" prefWidth="157.0" text="Encarregado" />
+                  <TableColumn fx:id="col_telefoneAluno" prefWidth="172.0" text="Endereço" />
+                  <TableColumn fx:id="col_enderecoAluno" prefWidth="209.0" text="Endereço" />
+              </columns>
+            </TableView>
+            <Pane prefHeight="54.0" prefWidth="155.0" style="-fx-background-color: orangered;" AnchorPane.rightAnchor="855.0">
+               <children>
+                  <JFXButton fx:id="btnFecharCadastro1" layoutX="889.0" onMouseClicked="#Sair" prefHeight="54.0" prefWidth="121.0" text="Fechar" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator layoutY="52.0" prefHeight="3.0" prefWidth="1010.0" style="-fx-background-color: orangered;" />
+                  <Label fx:id="lblTotalAlunos" alignment="CENTER" layoutX="11.0" layoutY="6.0" prefHeight="43.0" prefWidth="124.0" textFill="#c6c6c6">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="259.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../IdeaProjects/Escola/out/production/Escola/icone/icons8_edit_52px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="iconeBotacao2" fitHeight="25.0" fitWidth="30.0" layoutX="714.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_forward_60px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <JFXButton fx:id="tbnVoltarNovoEstudante2" layoutX="75.0" layoutY="415.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Anterior" textFill="WHITE" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="86.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_back_48px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <Pane fx:id="pnlEsconderBotaoVoltar2" layoutX="73.0" layoutY="411.0" prefHeight="39.0" prefWidth="193.0" style="-fx-background-color: white;" />
+            <ImageView fitHeight="39.0" fitWidth="59.0" layoutX="192.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_graduate_48px_1.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="59.0" layoutX="360.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_student_male_60px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <JFXTextField fx:id="txtBuscarAlunos" focusColor="#0a0a75" labelFloat="true" layoutX="775.0" layoutY="77.0" onKeyReleased="#buscarAluno" prefHeight="25.0" prefWidth="213.0" promptText="Pesquisar..." unFocusColor="ORANGERED" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="966.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_search_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <JFXButton fx:id="btnFichaTecnicaAluno" layoutX="361.0" layoutY="75.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #0a0a75;" text="Ficha Técnica" textFill="WHITE" />
+            <Pane layoutX="-1.0" layoutY="135.0" prefHeight="25.0" prefWidth="1011.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Label layoutX="27.0" layoutY="1.0" text="ID" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="163.0" layoutY="4.0" text="NOME" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="313.0" layoutY="3.0" text="IDADE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="393.0" layoutY="3.0" text="SEXO" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="497.0" layoutY="3.0" text="ENCARREGADO" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="643.0" layoutY="4.0" text="TELEFONE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="867.0" layoutY="4.0" text="ENDEREÇO" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXComboBox fx:id="comFiltrarAluno" layoutX="548.0" layoutY="77.0" prefHeight="27.0" prefWidth="174.0" promptText="Filtrar por..." unFocusColor="ORANGERED" />
+            <Label fx:id="lblPercentagemHomem" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="refrescarTabelaAlunos" fitHeight="39.0" fitWidth="59.0" layoutX="34.0" layoutY="70.0" onMouseClicked="#Refrescar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_refresh_60px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="367.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_pdf_96px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="moduloFinaceiro" prefHeight="707.0" prefWidth="1379.0" style="-fx-background-color: white;">
+         <children>
+            <Pane fx:id="pnlEsconderModoSecretario" layoutX="1176.0" layoutY="218.0" prefHeight="92.0" prefWidth="166.0" style="-fx-background-color: white;" />
+            <AnchorPane fx:id="pnlMenuRelatorios" layoutX="701.0" layoutY="215.0" onMouseExited="#MouseOut" prefHeight="91.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="154.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_bill_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnRecibosRelatorios" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Recíbo" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnDevedoresRelatorios" layoutY="1.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="155.0" text="       Devedores" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_debt_52px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="7.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_table_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="#0a0a75" layoutX="160.0" layoutY="29.0" points="-38.0, -21.0, 26.0, -21.0, -6.0, -36.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnTabelaDePrecosRelatorios" layoutY="58.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="306.0" text="       Tabela de Preços" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pnlMenuTabelaPrecos" layoutX="562.0" layoutY="218.0" onMouseExited="#MouseOut" prefHeight="55.0" prefWidth="305.0" style="-fx-background-color: #0a0a75;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_calendar_24_64px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="154.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_diversity_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="#0a0a75" layoutX="160.0" layoutY="29.0" points="-38.0, -21.0, 26.0, -21.0, -6.0, -36.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnTabelaDePrecosDiversos" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Diversos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnTabelaPrecosMensalidade" layoutX="-4.0" onMouseClicked="#eventos" prefHeight="55.0" prefWidth="155.0" text="       Mensalidade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pnlMenuDividas" layoutX="382.0" layoutY="217.0" onMouseExited="#MouseOut" prefHeight="54.0" prefWidth="305.0" style="-fx-background-color: #0a0a75;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="30.0" layoutX="154.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_diversity_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnDividasProprinasEntrar" layoutX="-4.0" onMouseClicked="#Entrar" prefHeight="54.0" prefWidth="155.0" text="       Mensalidade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnDividasDiversos" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="        Diversos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_debt_52px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="#0a0a75" layoutX="160.0" layoutY="29.0" points="-38.0, -21.0, 26.0, -21.0, -6.0, -36.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pnlMenuPagamento" layoutX="283.0" layoutY="217.0" onMouseExited="#MouseOut" prefHeight="54.0" prefWidth="286.0" style="-fx-background-color: #0a0a75;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <JFXButton fx:id="btnPagamentosDiversosEntrar" layoutX="131.0" onMouseClicked="#Entrar" prefHeight="55.0" prefWidth="155.0" text="      Diversos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMensalidadeEntrar" layoutX="-4.0" onMouseClicked="#Entrar" prefHeight="55.0" prefWidth="136.0" text="       Mensalidade" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_bill_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="143.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_diversity_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="#0a0a75" layoutX="80.0" layoutY="29.0" points="-23.0, -21.0, 40.0, -21.0, 9.0, -38.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+            <Pane layoutX="280.0" layoutY="133.0" prefHeight="66.0" prefWidth="809.0" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow color="#0a0a736f" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_money_48px_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="169.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Debt_128px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="324.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_table_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="499.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_purchase_order_100px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="658.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_graph_64px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnGraficos" layoutX="642.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="166.0" text="           Gráficos" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnRelatórios" layoutX="476.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="166.0" text="           Relatórios" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnTabelaDePrecos" layoutX="310.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="166.0" text="           Tabela de Preços" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnDividas" layoutX="155.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="155.0" text="        Dívidas" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnPagamentos" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="155.0" text="        Pagamentos" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Circle fx:id="btnTrocarModuloFinanceiro" fill="#0a0a75" layoutX="1254.0" layoutY="166.0" onMouseClicked="#trocarModulo" radius="41.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <ImageView fx:id="iconeTrocarModuloFinanceiro" fitHeight="30.0" fitWidth="30.0" layoutX="1239.0" layoutY="151.0" onMouseClicked="#trocarModulo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_settings_100px.png" />
+               </image>
+            </ImageView>
+            <Pane layoutY="-10.0" prefHeight="82.0" prefWidth="1379.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton layoutX="1267.0" layoutY="14.0" prefHeight="66.0" prefWidth="114.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Pane layoutX="301.0" layoutY="7.0" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: orangered;">
+                     <children>
+                        <Label layoutX="28.0" layoutY="26.0" text="FINÂNCEIRO" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+               <effect>
+                  <DropShadow color="ORANGERED" height="11.7" radius="2.425" spread="1.0" width="0.0" />
+               </effect>
+            </Pane>
+            <ImageView fitHeight="134.0" fitWidth="124.0" layoutX="-4.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_backpack_96px.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="pnlMenuGraficos" layoutX="783.0" layoutY="216.0" onMouseExited="#MouseOut" prefHeight="54.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_calendar_plus_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="139.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_event_accepted_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="#0a0a75" layoutX="160.0" layoutY="29.0" points="48.0, -21.0, 107.0, -21.0, 74.0, -37.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnNovoEventoEntrar1" layoutY="1.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="136.0" text="       Novo Evento" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnListaDeEventosEntrar1" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Eventos marcados" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Pane fx:id="pnlMenuModoSecretario" layoutX="1177.0" layoutY="230.0" onMouseExited="#MouseOut" prefHeight="66.0" prefWidth="155.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <Polygon fill="#0a0a75" layoutX="77.0" layoutY="12.0" points="-27.0, -4.0, 25.0, -4.0, -1.0, -24.0" stroke="#0a0a75" strokeType="INSIDE" />
+                  <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_filing_cabinet_60px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnModoSecretarioFinaceiro" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="155.0" text="        SECRETÁRIO" textFill="#8d8d8d">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator layoutX="4.0" layoutY="61.0" prefHeight="3.0" prefWidth="147.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlEsconderMenuFinanceiro" layoutX="272.0" layoutY="204.0" prefHeight="132.0" prefWidth="824.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="capa1" layoutX="-1.0" opacity="0.4" prefHeight="707.0" prefWidth="1379.0" style="-fx-background-color: black;" AnchorPane.rightAnchor="0.0" />
+      <AnchorPane fx:id="CapaModulo" prefHeight="707.0" prefWidth="1369.0" style="-fx-background-color: white;" />
+      <AnchorPane fx:id="pnlGeralListatudante" layoutX="269.0" layoutY="178.0" prefHeight="169.0" prefWidth="824.0" style="-fx-background-color: white;">
+         <children>
+            <JFXTextField fx:id="txtBuscarAlunosListagemGeral" focusColor="#0a0a75" labelFloat="true" layoutX="279.0" layoutY="86.0" onKeyReleased="#buscarAluno" prefHeight="25.0" prefWidth="147.0" promptText="Turma" unFocusColor="ORANGERED" />
+            <JFXButton fx:id="btnVerAlunsDadosPnlListarGeral" layoutX="74.0" layoutY="84.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #0a0a75;" text="Ver Lista" textFill="WHITE" />
+            <Label fx:id="lblPercentagemHomem1" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher1" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="82.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_pdf_96px.png" />
+               </image>
+            </ImageView>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="824.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnFecharListaGeral" layoutX="697.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="124.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Listagem Geral dos alunos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_list_view_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtBuscarAlunosListagemGeral1" focusColor="#0a0a75" labelFloat="true" layoutX="527.0" layoutY="87.0" onKeyReleased="#buscarAluno" prefHeight="25.0" prefWidth="166.0" promptText="Ano Lectivo" unFocusColor="ORANGERED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlAdicionarIndividual" layoutX="274.0" layoutY="186.0" prefHeight="239.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutX="391.0" layoutY="85.0" prefHeight="139.0" prefWidth="413.0" style="-fx-background-color: white; -fx-border-color: gray;">
+               <children>
+                  <JFXButton fx:id="btnAdicionarAlunoPnlAdicionarIndividual" layoutX="61.0" layoutY="95.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" text="Adicionar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="98.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Label layoutX="40.0" layoutY="14.0" text="Nome &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNomePnlAdicionarIndividual" layoutX="108.0" layoutY="14.0" prefHeight="21.0" prefWidth="266.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="35.0" text="Classe &gt;&gt;" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblClassePnlAdicionarIndividual" alignment="CENTER" layoutX="118.0" layoutY="35.0" prefHeight="21.0" prefWidth="68.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtBuscarAlunoPnlAdicionarTurmaIndividual" focusColor="#0a0a75" labelFloat="true" layoutX="580.0" layoutY="50.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="174.0" promptText="Pesquisar..." unFocusColor="ORANGERED" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="729.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_search_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <Label fx:id="lblPercentagemHomem121" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher111" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlAdicionarIndividual" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Adicionar Individual" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TableView fx:id="tbl_ListaAlunosAdicionarIndividual" layoutX="1.0" layoutY="44.0" onMouseClicked="#SelecionarTabela" prefHeight="183.0" prefWidth="375.0" style="-fx-background-color: white;">
+               <columns>
+                  <TableColumn fx:id="col_NumeroAlunoAdiconarIndividual" prefWidth="68.0" text="Nome" />
+                  <TableColumn fx:id="col_NomeAlunoAdiconarIndividual" prefWidth="232.0" text="Classe" />
+                  <TableColumn fx:id="col_classeAlunoAdiconarIndividual" prefWidth="74.0" text="Sala" />
+               </columns>
+            </TableView>
+            <Pane layoutY="40.0" prefHeight="30.0" prefWidth="375.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Label layoutX="14.0" layoutY="4.0" text="Numero" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="158.0" layoutY="4.0" text="Nome" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="312.0" layoutY="4.0" text="Classe" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXComboBox fx:id="cmbFiltrarPorPnlAdicionarAlunoTurma" focusColor="#0a0a75" layoutX="388.0" layoutY="52.0" prefHeight="25.0" prefWidth="136.0" promptText="Filtrar por..." unFocusColor="ORANGERED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlOrganizarTurma" layoutX="279.0" layoutY="188.0" prefHeight="227.0" prefWidth="802.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutX="385.0" layoutY="85.0" prefHeight="139.0" prefWidth="419.0" style="-fx-background-color: white; -fx-border-color: gray;">
+               <children>
+                  <JFXButton fx:id="btnOrganizarIndividual" layoutX="41.0" layoutY="73.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #0a0a75;" text="Individual" textFill="WHITE" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="60.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_student_male_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnOrganizarTurmaColetivo" layoutX="229.0" layoutY="74.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="155.0" style="-fx-background-color: #0a0a75;" text="Coletivo" textFill="WHITE" />
+                  <ImageView fitHeight="38.0" fitWidth="36.0" layoutX="239.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_User_Groups_128px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="60.0" layoutY="22.0" text="Adicionar  Aluno/os turma:" textFill="#797979">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTurmaAOgranizar" alignment="CENTER" layoutX="266.0" layoutY="22.0" prefHeight="21.0" prefWidth="106.0" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtBuscarTurmaPnlOrganizar" focusColor="#0a0a75" labelFloat="true" layoutX="541.0" layoutY="50.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="213.0" promptText="Digite o ano lectivo" unFocusColor="ORANGERED" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="729.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_search_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.05" />
+               </effect>
+            </ImageView>
+            <Label fx:id="lblPercentagemHomem12" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher11" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlOrganizarTurma" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Organizar turma" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_save_tabs_list_48px_1.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TableView fx:id="tbl_TurmasCriadas" layoutX="1.0" layoutY="79.0" onMouseClicked="#SelecionarTabela" prefHeight="148.0" prefWidth="375.0" style="-fx-background-color: white;">
+              <columns>
+                <TableColumn fx:id="col_turma" prefWidth="118.00003051757812" text="Nome" />
+                <TableColumn fx:id="col_classe" prefWidth="66.0" text="Classe" />
+                  <TableColumn fx:id="col_sala" prefWidth="86.0" text="Sala" />
+                  <TableColumn fx:id="col_periodo" prefWidth="105.0" text="Periodo" />
+              </columns>
+            </TableView>
+            <Pane layoutY="40.0" prefHeight="66.0" prefWidth="375.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Separator layoutX="1.0" layoutY="32.0" opacity="0.33" prefHeight="3.0" prefWidth="375.0" style="-fx-background-color: white;" />
+                  <Label layoutX="19.0" layoutY="4.0" text="Ano Lectivo:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblAnoLectivoOrganizarTurma" alignment="CENTER" layoutX="196.0" layoutY="4.0" prefHeight="21.0" prefWidth="166.0" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="42.0" text="Turma" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="132.0" layoutY="42.0" text="Classe" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="201.0" layoutY="42.0" text="Sala" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="291.0" layoutY="42.0" text="Período" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlCrirarTurma" layoutX="279.0" layoutY="188.0" prefHeight="183.0" prefWidth="812.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="btnGuardarTurma" layoutX="348.0" layoutY="143.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="147.0" style="-fx-background-color: #0a0a75;" text="      Guardar  Turma" textFill="WHITE" />
+            <Label fx:id="lblPercentagemHomem11" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="358.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_save_48px_2.png" />
+               </image>
+            </ImageView>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="812.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnFecharCriarTurma" layoutX="688.0" layoutY="3.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="124.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Criar Turmas " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Class_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Pane layoutX="209.0" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: orangered;">
+                     <children>
+                        <Label fx:id="lblNumeroDeTurmas" alignment="CENTER" layoutX="2.0" layoutY="3.0" prefHeight="38.0" prefWidth="106.0" text="99" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label fx:id="lblOrganizarTurmaEntrar" alignment="CENTER" layoutX="456.0" layoutY="3.0" onMouseClicked="#eventos" prefHeight="38.0" prefWidth="106.0" text="Organizar turma" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator layoutY="129.0" prefHeight="3.0" prefWidth="809.0" />
+            <JFXTextField fx:id="txtNomeTurma" focusColor="ORANGERED" labelFloat="true" layoutX="54.0" layoutY="70.0" prefHeight="25.0" prefWidth="124.0" promptText="Nome da turma" unFocusColor="#0a0a75" />
+            <JFXTextField fx:id="txtClasseTurma" focusColor="ORANGERED" labelFloat="true" layoutX="204.0" layoutY="70.0" prefHeight="25.0" prefWidth="79.0" promptText="Classe" unFocusColor="#0a0a75" />
+            <JFXTextField fx:id="txtSalaTurma" focusColor="ORANGERED" labelFloat="true" layoutX="316.0" layoutY="70.0" prefHeight="25.0" prefWidth="55.0" promptText="Sala" unFocusColor="#0a0a75" />
+            <JFXTextField fx:id="txtPeriodoTurma" focusColor="ORANGERED" labelFloat="true" layoutX="405.0" layoutY="70.0" prefHeight="25.0" prefWidth="116.0" promptText="Período" unFocusColor="#0a0a75" />
+            <JFXTextField fx:id="txtAnoLectivo" focusColor="ORANGERED" labelFloat="true" layoutX="575.0" layoutY="70.0" prefHeight="25.0" prefWidth="174.0" promptText="Ano Lectivo" unFocusColor="#0a0a75" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlAdicionarCooletivo" layoutX="281.0" layoutY="182.0" prefHeight="183.0" prefWidth="809.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="lblPercentagemHomem1211" alignment="CENTER" layoutX="407.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentagemMulher1111" alignment="CENTER" layoutX="241.0" layoutY="7.0" prefHeight="43.0" prefWidth="98.0" textFill="ORANGERED">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-7.0" prefHeight="43.0" prefWidth="809.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <JFXButton fx:id="btnSairPnlAdicionarColetivo" layoutX="730.0" layoutY="2.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="79.0" text="Sair" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="76.0" layoutY="11.0" text="Adicionar Coletivo" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="43.0" fitWidth="36.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_User_Groups_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <JFXComboBox fx:id="cmbSelecionarTurmaAAdicionarColetivo" focusColor="#0a0a75" layoutX="61.0" layoutY="67.0" prefHeight="25.0" prefWidth="136.0" promptText="Selecione turma" unFocusColor="ORANGERED" />
+            <JFXComboBox fx:id="cmbClasseAlunosAdicionarColetivo" focusColor="#0a0a75" layoutX="505.0" layoutY="68.0" prefHeight="25.0" prefWidth="106.0" promptText="Classe" unFocusColor="ORANGERED" />
+            <JFXTextField fx:id="txtQtdAlunosPnlAdicionarTurmaColetivo" focusColor="#0a0a75" labelFloat="true" layoutX="672.0" layoutY="67.0" onKeyReleased="#buscarTurma" prefHeight="25.0" prefWidth="94.0" promptText="Qtd de alunos" unFocusColor="ORANGERED" />
+            <JFXButton fx:id="btnAdicionarAlunoPnlAdicionarColetivo" layoutX="483.0" layoutY="139.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #0a0a75;" text="Adicionar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="500.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_add_100px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <Separator layoutX="14.0" layoutY="114.0" prefHeight="3.0" prefWidth="768.0" />
+            <Separator layoutX="227.0" layoutY="53.0" orientation="VERTICAL" prefHeight="54.0" prefWidth="2.0" />
+            <Separator layoutX="471.0" layoutY="53.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="6.0" />
+            <Label layoutX="290.0" layoutY="57.0" text="Alunos Existentes" textFill="#616161">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="230.0" layoutY="52.0" prefHeight="3.0" prefWidth="244.0" />
+            <Separator layoutX="230.0" layoutY="80.0" prefHeight="3.0" prefWidth="244.0" />
+            <Label fx:id="lblQtdAlunosExistentesAdiconarColetivo" alignment="CENTER" layoutX="281.0" layoutY="83.0" prefHeight="34.0" prefWidth="142.0" text="32" textFill="#ff3300">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlAlterarProfessor" layoutX="281.0" layoutY="132.0" prefHeight="316.0" prefWidth="812.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutY="54.0" prefHeight="253.0" prefWidth="809.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="320.0" layoutY="7.0" prefHeight="30.0" prefWidth="200.0" text="Dados do professor" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtNomeCompletoProfessor1" focusColor="#f55414" labelFloat="true" layoutX="34.0" layoutY="77.0" prefHeight="25.0" prefWidth="221.0" promptText="Nome completo" unFocusColor="#0a0a75" />
+                  <JFXComboBox fx:id="cmbGeneropnlDadosProfessor1" focusColor="ORANGERED" layoutX="341.0" layoutY="140.0" prefHeight="25.0" prefWidth="114.0" promptText="Gênero" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBIpnlDadosProfessor1" focusColor="#f55414" labelFloat="true" layoutX="34.0" layoutY="140.0" prefHeight="25.0" prefWidth="166.0" promptText="Bilhete" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtCertificadoProfessor1" focusColor="ORANGERED" labelFloat="true" layoutX="562.0" layoutY="76.0" prefHeight="25.0" prefWidth="213.0" promptText="Certificado Nº" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="752.0" style="-fx-background-color: orangered;" />
+                  <JFXDatePicker fx:id="DataDeNascimentopnlDadosProfessor1" defaultColor="#ff4400" layoutX="341.0" layoutY="76.0" prefHeight="25.0" prefWidth="155.0" promptText="Data de Nascimento" />
+                  <JFXButton fx:id="btnAlterarProfessor" layoutX="602.0" layoutY="210.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Alterar" textFill="WHITE" />
+                  <ImageView fx:id="iconeBotacao31" fitHeight="25.0" fitWidth="30.0" layoutX="706.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_save_48px_2.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Separator layoutX="23.0" layoutY="193.0" prefHeight="3.0" prefWidth="752.0" />
+                  <JFXTextField fx:id="txtTelefoneProfessor1" focusColor="ORANGERED" labelFloat="true" layoutX="564.0" layoutY="140.0" prefHeight="25.0" prefWidth="213.0" promptText="Telefone" unFocusColor="#0a0a75" />
+               </children>
+            </Pane>
+            <Pane layoutX="195.0" prefHeight="54.0" prefWidth="812.0" style="-fx-background-color: #0a0a75;" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Pencil_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnFecharAlterarProfessor" layoutX="691.0" onMouseClicked="#Sair" prefHeight="54.0" prefWidth="121.0" text="Fechar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlListatudante1" layoutX="163.0" layoutY="135.0" prefHeight="489.0" prefWidth="987.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="btnAlterarProfessorEntrar" layoutX="183.0" layoutY="77.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Alterar" textFill="WHITE" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="192.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_Pencil_128px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <TableView fx:id="tbl_ProfessorLista" blendMode="DARKEN" layoutX="4.0" layoutY="136.0" onMousePressed="#SelecionarTabela" prefHeight="353.0" prefWidth="1005.0" style="-fx-background-color: white;">
+               <columns>
+                  <TableColumn fx:id="col_nomeProfessor" prefWidth="248.0" text="Nome" />
+                  <TableColumn fx:id="col_idadeProfessor" prefWidth="115.0" text="IDADE" />
+                  <TableColumn fx:id="col_sexoProfessor" prefWidth="136.0" text="Sexo" />
+                  <TableColumn fx:id="col_documentoProfessor" prefWidth="160.0" text="bilhete" />
+                  <TableColumn fx:id="col_certificadoProfesssor" prefWidth="195.0" text="certificado" />
+                  <TableColumn fx:id="col_telefoneProfessor" prefWidth="150.0" text="Telefone" />
+               </columns>
+            </TableView>
+            <Pane prefHeight="54.0" prefWidth="155.0" style="-fx-background-color: orangered;" AnchorPane.rightAnchor="855.0">
+               <children>
+                  <Separator layoutY="52.0" prefHeight="3.0" prefWidth="1005.0" style="-fx-background-color: orangered;" />
+                  <Label fx:id="lblTotalProfessores" alignment="CENTER" layoutX="11.0" layoutY="6.0" prefHeight="43.0" prefWidth="124.0" textFill="#c6c6c6">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="-1.0" layoutY="135.0" prefHeight="25.0" prefWidth="1011.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Label layoutX="87.0" layoutY="4.0" text="NOME" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="292.0" layoutY="4.0" text="IDADE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="423.0" layoutY="4.0" text="SEXO" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="559.0" layoutY="4.0" text="BILHETE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="725.0" layoutY="4.0" text="CERTIFICADO" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="909.0" layoutY="4.0" text="TELEFONE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXButton fx:id="btnFecharListaProfessores" layoutX="888.0" onMouseClicked="#Sair" prefHeight="54.0" prefWidth="121.0" text="Fechar" textFill="#0a0a75">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlCadastroProfessor" layoutX="271.0" layoutY="131.0" prefHeight="307.0" prefWidth="797.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutY="54.0" prefHeight="253.0" prefWidth="809.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="320.0" layoutY="7.0" prefHeight="30.0" prefWidth="200.0" text="Dados do professor" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtNomeCompletoProfessor" focusColor="#f55414" labelFloat="true" layoutX="34.0" layoutY="77.0" prefHeight="25.0" prefWidth="221.0" promptText="Nome completo" unFocusColor="#0a0a75" />
+                  <JFXComboBox fx:id="cmbGeneropnlDadosProfessor" focusColor="ORANGERED" layoutX="341.0" layoutY="140.0" prefHeight="25.0" prefWidth="114.0" promptText="Gênero" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBIpnlDadosProfessor" focusColor="#f55414" labelFloat="true" layoutX="34.0" layoutY="140.0" prefHeight="25.0" prefWidth="166.0" promptText="Bilhete" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtCertificadoProfessor" focusColor="ORANGERED" labelFloat="true" layoutX="562.0" layoutY="76.0" prefHeight="25.0" prefWidth="213.0" promptText="Certificado Nº" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="752.0" style="-fx-background-color: orangered;" />
+                  <JFXDatePicker fx:id="DataDeNascimentopnlDadosProfessor" defaultColor="#ff4400" layoutX="341.0" layoutY="76.0" prefHeight="25.0" prefWidth="155.0" promptText="Data de Nascimento" />
+                  <JFXButton fx:id="btnGuardarProfessor" layoutX="602.0" layoutY="210.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Guardar" textFill="WHITE" />
+                  <ImageView fx:id="iconeBotacao3" fitHeight="25.0" fitWidth="30.0" layoutX="706.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_save_48px_2.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Separator layoutX="23.0" layoutY="193.0" prefHeight="3.0" prefWidth="752.0" />
+                  <JFXTextField fx:id="txtTelefoneProfessor" focusColor="ORANGERED" labelFloat="true" layoutX="564.0" layoutY="140.0" prefHeight="25.0" prefWidth="213.0" promptText="Telefone" unFocusColor="#0a0a75" />
+               </children>
+            </Pane>
+            <Pane layoutX="195.0" prefHeight="54.0" prefWidth="812.0" style="-fx-background-color: #0a0a75;" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnFecharCadastro2" layoutX="691.0" onMouseClicked="#Sair" prefHeight="54.0" prefWidth="121.0" text="Fechar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlAlterarEstudante" layoutX="165.0" layoutY="125.0" prefHeight="459.0" prefWidth="1010.0" style="-fx-background-color: white;">
+         <children>
+            <Pane fx:id="pnlDadosEncarregadoAlterar" layoutX="65.0" layoutY="61.0" prefHeight="336.0" prefWidth="742.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXTextField fx:id="txtEncarregadopnlDadosEncarregado1" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="93.0" prefHeight="25.0" prefWidth="306.0" promptText="Nome do encarregado" unFocusColor="#0a0a75" />
+                  <JFXComboBox fx:id="cmbGeneropnlDadosEncarregado1" focusColor="ORANGERED" layoutX="35.0" layoutY="214.0" prefHeight="25.0" prefWidth="114.0" promptText="Gênero" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtEnderecopnlDadosEncarregado1" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText=" Endereço " unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtProfissaopnlDadosEncarregado1" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="93.0" prefHeight="25.0" prefWidth="213.0" promptText="Profissão" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="713.0" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefWidth="200.0" />
+                  <Label layoutX="318.0" layoutY="12.0" prefHeight="30.0" prefWidth="106.0" text="Acadêmicas" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Encarregado" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="248.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <Separator layoutX="463.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" style="-fx-background-color: #0a0a75;" />
+                  <JFXTextField fx:id="txtTelefonepnlDadosEncarregado1" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText="Telefone" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtTelefoneAlternativopnlDadosEncarregado1" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="214.0" prefHeight="25.0" prefWidth="213.0" promptText="Teletone (alternativo)" unFocusColor="#0a0a75" />
+                  <Label layoutX="92.0" layoutY="12.0" prefHeight="30.0" prefWidth="79.0" text="Pessoal" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlDadosAcademicosAlterar" layoutX="64.0" layoutY="60.0" prefHeight="336.0" prefWidth="752.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="92.0" layoutY="12.0" prefHeight="30.0" prefWidth="79.0" text="Pessoal" textFill="#ff5015">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtClassepnlDadosAcademicos1" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="93.0" prefHeight="25.0" prefWidth="306.0" promptText="Classe ou Curso" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtProvinciaActualpnlDadosAcademicos1" focusColor="ORANGERED" labelFloat="true" layoutX="35.0" layoutY="144.0" prefHeight="25.0" prefWidth="213.0" promptText="Província (actual)" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="713.0" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefWidth="200.0" />
+                  <Label layoutX="318.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Acadêmicos" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Encarregado" textFill="#a8a8a8">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="248.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" style="-fx-background-color: #0a0a75;" />
+                  <Separator layoutX="463.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <JFXTextField fx:id="txtMuncipiopnlDadosAcademicos1" focusColor="ORANGERED" labelFloat="true" layoutX="35.0" layoutY="207.0" prefHeight="25.0" prefWidth="213.0" promptText="Município (actual)" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBairroActualpnlDadosAcademicos1" focusColor="ORANGERED" labelFloat="true" layoutX="448.0" layoutY="93.0" prefHeight="25.0" prefWidth="213.0" promptText="Bairro (actual)" unFocusColor="#0a0a75" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlDadosPessoasAlterar" layoutX="64.0" layoutY="62.0" prefHeight="336.0" prefWidth="742.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="92.0" layoutY="12.0" prefHeight="30.0" prefWidth="79.0" text="Pessoal" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtNomeCadastropnlDadosPessoas1" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="93.0" prefHeight="25.0" prefWidth="306.0" promptText="Nome completo" unFocusColor="#0a0a75" />
+                  <JFXComboBox fx:id="cmbGeneropnlDadosPessoas1" focusColor="ORANGERED" layoutX="35.0" layoutY="278.0" prefHeight="25.0" prefWidth="114.0" promptText="Gênero" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBIpnlDadosPessoas1" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText="Bilhete ou Cédula" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtProvinciaOrigempnlDadosPessoas1" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="93.0" prefHeight="25.0" prefWidth="213.0" promptText="Província (Orígem)" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="713.0" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefWidth="200.0" style="-fx-background-color: #0a0a75;" />
+                  <Label layoutX="318.0" layoutY="12.0" prefHeight="30.0" prefWidth="106.0" text="Acadêmicas" textFill="#a8a8a8">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Encarregado" textFill="#a8a8a8">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="248.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <Separator layoutX="463.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <JFXDatePicker fx:id="DataDeNascimentopnlDadosPessoas1" defaultColor="#ff4400" layoutX="35.0" layoutY="214.0" prefHeight="25.0" prefWidth="221.0" promptText="Data de Nascimento" />
+                  <JFXTextField fx:id="txtMunicipioOrigempnlDadosPessoas1" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText="Município (Orígem)" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBairroOrigem1" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="214.0" prefHeight="25.0" prefWidth="213.0" promptText="Bairro (Orígem)" unFocusColor="#0a0a75" />
+               </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="1010.0" style="-fx-background-color: white;" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Pencil_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.05" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnFecharAlterarAluno" layoutX="889.0" layoutY="-1.0" onMouseClicked="#Sair" prefHeight="54.0" prefWidth="121.0" text="Fechar" textFill="#06179a">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator layoutY="52.0" prefHeight="3.0" prefWidth="1010.0" style="-fx-background-color: #0a0a75;" />
+                  <Label fx:id="lblNomePnlAlterar" layoutX="107.0" layoutY="18.0" prefHeight="27.0" prefWidth="266.0" text="Nome" textFill="#ff2b00">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator layoutX="64.0" layoutY="401.0" prefHeight="3.0" prefWidth="686.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="259.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../IdeaProjects/Escola/out/production/Escola/icone/icons8_edit_52px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="407.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../IdeaProjects/Escola/out/production/Escola/icone/icons8_Remove_48px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <JFXButton fx:id="btnAcaopnlAlterar" layoutX="610.0" layoutY="415.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Próximo" textFill="WHITE" />
+            <ImageView fx:id="iconeBotacao1" fitHeight="25.0" fitWidth="30.0" layoutX="714.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_forward_60px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <JFXButton fx:id="btnVoltarAlterar" layoutX="75.0" layoutY="415.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Anterior" textFill="WHITE" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="86.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_back_48px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <Pane fx:id="pnlEsconderBotaoVoltarAlterar" layoutX="73.0" layoutY="411.0" prefHeight="39.0" prefWidth="193.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+      <Pane fx:id="pnlNotificacao" layoutX="1061.0" layoutY="630.0" prefHeight="55.0" prefWidth="297.0" style="-fx-background-color: #0a0a75;">
+         <effect>
+            <DropShadow color="ORANGERED" />
+         </effect>
+         <children>
+            <ImageView fx:id="imagemNotificacao" fitHeight="30.0" fitWidth="30.0" layoutX="23.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_backpack_96px.png" />
+               </image></ImageView>
+            <Label fx:id="lblMensagem" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="20.0" prefHeight="17.0" prefWidth="200.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="pnlCadstroEstudante" layoutX="155.0" layoutY="115.0" prefHeight="459.0" prefWidth="1010.0" style="-fx-background-color: white;">
+         <children>
+            <Pane fx:id="pnlDadosEncarregado" layoutX="65.0" layoutY="61.0" prefHeight="336.0" prefWidth="742.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXTextField fx:id="txtEncarregadopnlDadosEncarregado" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="93.0" prefHeight="25.0" prefWidth="306.0" promptText="Nome do encarregado" unFocusColor="#0a0a75" />
+                  <JFXComboBox fx:id="cmbGeneropnlDadosEncarregado" focusColor="ORANGERED" layoutX="35.0" layoutY="214.0" prefHeight="25.0" prefWidth="114.0" promptText="Gênero" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtEnderecopnlDadosEncarregado" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText=" Endereço " unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtProfissaopnlDadosEncarregado" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="93.0" prefHeight="25.0" prefWidth="213.0" promptText="Profissão" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="713.0" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefWidth="200.0" />
+                  <Label layoutX="318.0" layoutY="12.0" prefHeight="30.0" prefWidth="106.0" text="Acadêmicas" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Encarregado" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="248.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <Separator layoutX="463.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" style="-fx-background-color: #0a0a75;" />
+                  <JFXTextField fx:id="txtTelefonepnlDadosEncarregado" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText="Telefone" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtTelefoneAlternativopnlDadosEncarregado" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="214.0" prefHeight="25.0" prefWidth="213.0" promptText="Teletone (alternativo)" unFocusColor="#0a0a75" />
+                  <Label layoutX="92.0" layoutY="12.0" prefHeight="30.0" prefWidth="79.0" text="Pessoal" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlDadosAcademicos" layoutX="64.0" layoutY="60.0" prefHeight="336.0" prefWidth="752.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="92.0" layoutY="12.0" prefHeight="30.0" prefWidth="79.0" text="Pessoal" textFill="#ff5015">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtClassepnlDadosAcademicos" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="93.0" prefHeight="25.0" prefWidth="306.0" promptText="Classe ou Curso" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtProvinciaActualpnlDadosAcademicos" focusColor="ORANGERED" labelFloat="true" layoutX="35.0" layoutY="144.0" prefHeight="25.0" prefWidth="213.0" promptText="Província (actual)" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="713.0" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefWidth="200.0" />
+                  <Label layoutX="318.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Acadêmicos" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Encarregado" textFill="#a8a8a8">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="248.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" style="-fx-background-color: #0a0a75;" />
+                  <Separator layoutX="463.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <JFXTextField fx:id="txtMuncipiopnlDadosAcademicos" focusColor="ORANGERED" labelFloat="true" layoutX="35.0" layoutY="207.0" prefHeight="25.0" prefWidth="213.0" promptText="Município (actual)" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBairroActualpnlDadosAcademicos" focusColor="ORANGERED" labelFloat="true" layoutX="448.0" layoutY="93.0" prefHeight="25.0" prefWidth="213.0" promptText="Bairro (actual)" unFocusColor="#0a0a75" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlDadosPessoas" layoutX="64.0" layoutY="62.0" prefHeight="336.0" prefWidth="742.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="92.0" layoutY="12.0" prefHeight="30.0" prefWidth="79.0" text="Pessoal" textFill="#0a0a75">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtNomeCadastropnlDadosPessoas" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="93.0" prefHeight="25.0" prefWidth="306.0" promptText="Nome completo" unFocusColor="#0a0a75" />
+                  <JFXComboBox fx:id="cmbGeneropnlDadosPessoas" focusColor="ORANGERED" layoutX="35.0" layoutY="278.0" prefHeight="25.0" prefWidth="114.0" promptText="Gênero" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBIpnlDadosPessoas" focusColor="#f55414" labelFloat="true" layoutX="35.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText="Bilhete ou Cédula" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtProvinciaOrigempnlDadosPessoas" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="93.0" prefHeight="25.0" prefWidth="213.0" promptText="Província (Orígem)" unFocusColor="#0a0a75" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefHeight="3.0" prefWidth="713.0" />
+                  <Separator layoutX="25.0" layoutY="43.0" prefWidth="200.0" style="-fx-background-color: #0a0a75;" />
+                  <Label layoutX="318.0" layoutY="12.0" prefHeight="30.0" prefWidth="106.0" text="Acadêmicas" textFill="#a8a8a8">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="521.0" layoutY="12.0" prefHeight="30.0" prefWidth="114.0" text="Encarregado" textFill="#a8a8a8">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="248.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <Separator layoutX="463.0" layoutY="43.0" prefHeight="3.0" prefWidth="230.0" />
+                  <JFXDatePicker fx:id="DataDeNascimentopnlDadosPessoas" defaultColor="#ff4400" layoutX="35.0" layoutY="214.0" prefHeight="25.0" prefWidth="221.0" promptText="Data de Nascimento" />
+                  <JFXTextField fx:id="txtMunicipioOrigempnlDadosPessoas" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="156.0" prefHeight="25.0" prefWidth="213.0" promptText="Município (Orígem)" unFocusColor="#0a0a75" />
+                  <JFXTextField fx:id="txtBairroOrigem" focusColor="ORANGERED" labelFloat="true" layoutX="463.0" layoutY="214.0" prefHeight="25.0" prefWidth="213.0" promptText="Bairro (Orígem)" unFocusColor="#0a0a75" />
+               </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="1010.0" style="-fx-background-color: #0a0a75;" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnFecharCadastro" layoutX="889.0" layoutY="-1.0" onMouseClicked="#Sair" prefHeight="54.0" prefWidth="121.0" text="Fechar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Pane layoutX="844.0" layoutY="54.0" prefHeight="148.0" prefWidth="166.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Pane layoutY="109.0" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #0a0a75;">
+                     <children>
+                        <Label fx:id="lblTotalNumeroEstudantes" alignment="CENTER" layoutX="102.0" layoutY="5.0" prefHeight="30.0" prefWidth="79.0" text="123" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="7.0" layoutY="5.0" prefHeight="30.0" prefWidth="114.0" text="Total alunos:" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="68.0" fitWidth="79.0" layoutX="49.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../IdeaProjects/Escola/out/production/Escola/icone/icons8_student_male_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Separator layoutX="64.0" layoutY="401.0" prefHeight="3.0" prefWidth="686.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="259.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../IdeaProjects/Escola/out/production/Escola/icone/icons8_edit_52px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="407.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../IdeaProjects/Escola/out/production/Escola/icone/icons8_Remove_48px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <JFXButton fx:id="btnAcaopnlDadosPessoas" layoutX="610.0" layoutY="415.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Próximo" textFill="WHITE" />
+            <ImageView fx:id="iconeBotacao" fitHeight="25.0" fitWidth="30.0" layoutX="714.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_forward_60px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <JFXButton fx:id="tbnVoltarNovoEstudante" layoutX="75.0" layoutY="415.0" onMouseClicked="#eventos" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #0a0a75;" text="Anterior" textFill="WHITE" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="86.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_back_48px.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+            </ImageView>
+            <Pane fx:id="pnlEsconderBotaoVoltar" layoutX="73.0" layoutY="411.0" prefHeight="39.0" prefWidth="193.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="687.0" prefWidth="1359.0" style="-fx-background-color: white;" />
+      <AnchorPane fx:id="moduloSecretario" prefHeight="707.0" prefWidth="1379.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane fx:id="pnlMenuAdministracao" layoutX="562.0" layoutY="218.0" onMouseExited="#MouseOut" prefHeight="68.0" prefWidth="305.0" style="-fx-background-color: orangered;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="154.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Pencil_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="ORANGERED" layoutX="160.0" layoutY="29.0" points="-38.0, -21.0, 26.0, -21.0, -6.0, -36.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnNovoFuncionarioEntrar" layoutX="-4.0" onMouseClicked="#eventos" prefHeight="55.0" prefWidth="155.0" text="       Funcionário" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAlterarProfessorEntrar2" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Alterar Dados" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Pane layoutX="280.0" layoutY="113.0" prefHeight="66.0" prefWidth="809.0" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow color="#0a0a736f" />
+               </effect>
+               <children>
+                  <JFXButton fx:id="btnNovoAluno" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="155.0" text="        Alunos" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_student_male_60px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="169.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_teacher_100px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="324.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_administrator_male_60px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="499.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_diversity_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="658.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_calendar_8_100px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnProfessores" layoutX="155.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="155.0" text="        Professores" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAdministracao" layoutX="310.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="166.0" text="           Administração" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnOutros" layoutX="476.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="166.0" text="           Outros" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnEventos" layoutX="642.0" layoutY="-1.0" onMouseClicked="#eventos" prefHeight="68.0" prefWidth="166.0" text="           Eventos" textFill="ORANGERED">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <AnchorPane fx:id="pnlMenuEventos" layoutX="783.0" layoutY="216.0" onMouseExited="#MouseOut" prefHeight="54.0" prefWidth="306.0" style="-fx-background-color: orangered;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_calendar_plus_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="139.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_event_accepted_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="ORANGERED" layoutX="160.0" layoutY="29.0" points="48.0, -21.0, 107.0, -21.0, 74.0, -37.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnNovoEventoEntrar" layoutY="1.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="136.0" text="       Novo Evento" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnListaDeEventosEntrar" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Eventos marcados" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pnlMenuOutros" layoutX="701.0" layoutY="215.0" onMouseExited="#MouseOut" prefHeight="169.0" prefWidth="306.0" style="-fx-background-color: orangered;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_list_view_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="154.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Class_128px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="7.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_smart_card_48px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="7.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_delete_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="157.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_layers_32px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="ORANGERED" layoutX="160.0" layoutY="29.0" points="-38.0, -21.0, 26.0, -21.0, -6.0, -36.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnListagemEntrarpnlOutros" layoutY="1.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="155.0" text="       Listagem geral" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCriarTurmasEntrarpnlOutros" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Turmas " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCartaoOutrosEntrar" layoutY="58.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="147.0" text="       Cartão" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnExcluirOutrosEntrar" layoutY="112.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Excluir Dados" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnNotasrOutrosEntrar" layoutX="139.0" layoutY="58.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="       Notas" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pnlMenuAluno" layoutX="283.0" layoutY="217.0" onMouseExited="#MouseOut" prefHeight="54.0" prefWidth="286.0" style="-fx-background-color: orangered;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="143.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_list_view_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="ORANGERED" layoutX="80.0" layoutY="29.0" points="-23.0, -21.0, 40.0, -21.0, 9.0, -38.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnNovoAlunoEntrar" layoutX="-4.0" onMouseClicked="#Entrar" prefHeight="55.0" prefWidth="136.0" text="       Novo Aluno" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAlterarAlunoEntrar" layoutX="131.0" onMouseClicked="#Entrar" prefHeight="55.0" prefWidth="155.0" text="       Listar Todos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pnlMenuProfessor" layoutX="382.0" layoutY="217.0" onMouseExited="#MouseOut" prefHeight="54.0" prefWidth="305.0" style="-fx-background-color: orangered;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#0a0a73cd" />
+               </effect>
+               <children>
+                  <JFXButton fx:id="btnListaProfessores" layoutX="139.0" onMouseClicked="#eventos" prefHeight="54.0" prefWidth="166.0" text="        Listar Todos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_add_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="43.0" fitWidth="30.0" layoutX="154.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_list_view_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <Polygon fill="ORANGERED" layoutX="160.0" layoutY="29.0" points="-38.0, -21.0, 26.0, -21.0, -6.0, -36.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <JFXButton fx:id="btnNovoProfessorEntrar" layoutX="-4.0" onMouseClicked="#Entrar" prefHeight="54.0" prefWidth="155.0" text="       Novo Professor" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Pane prefHeight="66.0" prefWidth="1379.0" style="-fx-background-color: #0a0a75;">
+               <children>
+                  <Circle fx:id="btnTrocarModuloSecretario" fill="#ed520e" layoutX="1291.0" layoutY="33.0" onMouseClicked="#trocarModulo" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Circle>
+                  <ImageView fx:id="iconeTrocarModuloSecretario" fitHeight="30.0" fitWidth="30.0" layoutX="1276.0" layoutY="20.0" onMouseClicked="#trocarModulo" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_settings_100px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow color="#ff1900" height="14.83" radius="3.2075" spread="1.0" width="0.0" />
+               </effect>
+            </Pane>
+            <ImageView fitHeight="134.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_backpack_96px.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="308.0" prefHeight="66.0" prefWidth="184.0" style="-fx-background-color: orangered;">
+               <children>
+                  <Label layoutX="25.0" layoutY="16.0" text="SECRETÁRIO" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlEsconderMenu" layoutX="54.0" layoutY="204.0" prefHeight="481.0" prefWidth="1278.0" style="-fx-background-color: white; -fx-border-color: lightgray;">
+               <effect>
+                  <DropShadow color="#ff3c0000" />
+               </effect>
+               <children>
+                  <Pane opacity="0.18" prefHeight="176.0" prefWidth="1278.0" style="-fx-background-color: #0a0a75;" />
+                  <Pane layoutX="992.0" layoutY="33.0" prefHeight="124.0" prefWidth="184.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="43.0" fitWidth="47.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/icons8_teacher_100px.png" />
+                           </image>
+                        </ImageView>
+                        <Separator layoutY="56.0" prefHeight="3.0" prefWidth="184.0" />
+                        <Pane layoutY="56.0" prefHeight="68.0" prefWidth="184.0" style="-fx-background-color: orangered;">
+                           <children>
+                              <Label fx:id="lblTotalProfessores" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="7.0" prefHeight="55.0" prefWidth="174.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="38.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="8.0" prefHeight="55.0" prefWidth="111.0" text="Professores" textFill="#23326f">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow color="#00000034" />
+                     </effect>
+                  </Pane>
+                  <Pane layoutX="47.0" layoutY="33.0" prefHeight="124.0" prefWidth="184.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="43.0" fitWidth="47.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/icons8_student_male_60px.png" />
+                           </image>
+                        </ImageView>
+                        <Separator layoutY="56.0" prefHeight="3.0" prefWidth="184.0" />
+                        <Pane layoutY="57.0" prefHeight="68.0" prefWidth="184.0" style="-fx-background-color: orangered;">
+                           <children>
+                              <Label fx:id="lblTortalAlunos" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="7.0" prefHeight="55.0" prefWidth="174.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="38.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="17.0" layoutY="11.0" prefHeight="55.0" prefWidth="174.0" text="Alunos" textFill="#23326f">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow color="#00000034" />
+                     </effect>
+                  </Pane>
+                  <Pane layoutX="489.0" layoutY="33.0" prefHeight="124.0" prefWidth="184.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="43.0" fitWidth="47.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagem/icons8_Class_128px.png" />
+                           </image>
+                        </ImageView>
+                        <Separator layoutY="56.0" prefHeight="3.0" prefWidth="184.0" />
+                        <Pane layoutY="56.0" prefHeight="68.0" prefWidth="184.0" style="-fx-background-color: orangered;">
+                           <children>
+                              <Label fx:id="lblTotalTurmas" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="7.0" prefHeight="55.0" prefWidth="174.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="38.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="6.0" prefHeight="55.0" prefWidth="174.0" text="+394" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="38.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="6.0" prefHeight="55.0" prefWidth="111.0" text="Turmas" textFill="#23326f">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow color="#00000034" />
+                     </effect>
+                  </Pane>
+                  <Separator layoutY="177.0" prefHeight="3.0" prefWidth="1278.0" />
+                  <PieChart fx:id="graficoGeneroModuloScretario" layoutX="1.0" layoutY="174.0" prefHeight="307.0" prefWidth="375.0" title="Gênero dos alunos" />
+                  <BarChart fx:id="GraficoAlunosPorTurmas" layoutX="418.0" layoutY="179.0" prefHeight="307.0" prefWidth="413.0" title="Quantidade de alunos">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <PieChart fx:id="GraficoAlunosPorClasses" layoutX="889.0" layoutY="180.0" prefHeight="307.0" prefWidth="375.0" title="Alunos por classes" />
+               </children></Pane>
+            <Pane fx:id="pnlMenuModoFinanceiro" layoutX="1201.0" layoutY="66.0" onMouseExited="#MouseOut" prefHeight="132.0" prefWidth="166.0" style="-fx-background-color: ORANGERED;">
+               <children>
+                  <ImageView fitHeight="34.0" fitWidth="27.0" layoutX="19.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_shutdown_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="17.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_calculate_money_128px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="15.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_event_accepted_60px.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btnModoFinanceiroSecretario" onMouseClicked="#eventos" prefHeight="43.0" prefWidth="155.0" text="            FINÂNCEIRO" textFill="#eeeeee">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator layoutX="5.0" layoutY="42.0" prefHeight="3.0" prefWidth="144.0" />
+                  <JFXButton fx:id="btnNovoAnoLectivoEntrar" layoutX="-3.0" layoutY="47.0" onMouseClicked="#eventos" prefHeight="39.0" prefWidth="164.0" text="            ANO LECTIVO" textFill="#eeeeee">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator layoutX="4.0" layoutY="85.0" prefHeight="3.0" prefWidth="147.0" />
+                  <JFXButton fx:id="btnSairModuloSecretario" layoutX="2.0" layoutY="88.0" onMouseClicked="#Sair" prefHeight="39.0" prefWidth="155.0" text="          SAIR" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <Pane fx:id="pnlEsconderMenuModuloFinanceiro" layoutX="1183.0" layoutY="69.0" prefHeight="132.0" prefWidth="192.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlLogar" prefHeight="707.0" prefWidth="1379.0" style="-fx-background-color: white;">
+         <children>
+            <Pane layoutX="545.0" layoutY="184.0" prefHeight="432.0" prefWidth="356.0" style="-fx-background-color: orangered;">
+               <effect>
+                  <DropShadow color="#0000006d" spread="0.11" />
+               </effect>
+               <children>
+                  <Circle fill="WHITE" layoutX="170.0" layoutY="110.0" radius="83.0" stroke="WHITE" strokeType="INSIDE" />
+                  <ImageView fitHeight="112.0" fitWidth="124.0" layoutX="114.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_Users_128px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXPasswordField fx:id="txtPalavraPasseLogar" focusColor="WHITE" layoutX="63.0" layoutY="296.0" prefHeight="25.0" prefWidth="230.0" promptText="Palavra-Passe" unFocusColor="WHITE" />
+                  <JFXButton fx:id="btnLogar" layoutX="-5.0" layoutY="383.0" onMouseClicked="#Logar" prefHeight="55.0" prefWidth="364.0" style="-fx-background-color: #0a0a75;" text="ENTRAR" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="293.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagem/icons8_forward_60px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="63.0" layoutY="206.0" prefHeight="17.0" prefWidth="244.0" text="Use o teu dado para fazer o login!" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator layoutX="20.0" layoutY="80.0" prefHeight="1.0" prefWidth="1346.0" />
+            <ImageView fitHeight="75.0" fitWidth="89.0" layoutX="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_backpack_96px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="134.0" layoutY="20.0" text="Gestor Escolar" textFill="#0a0a75">
+               <font>
+                  <Font name="HoloLens MDL2 Assets" size="32.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnFecharGeral" buttonType="RAISED" layoutX="1193.0" layoutY="10.0" onMouseClicked="#Sair" prefHeight="55.0" prefWidth="147.0" style="-fx-background-color: orangered;" text="Fechar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="215.0" layoutY="235.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_change_48px_2.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="235.0" layoutY="368.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_calendar_8_100px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="368.0" layoutY="235.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_edit_52px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="265.0" layoutY="114.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_teacher_100px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="479.0" layoutY="407.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_smart_card_48px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="407.0" layoutY="577.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_graduate_48px_1.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="57.0" layoutY="407.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_book_60px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="222.0" layoutY="579.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_calendar_plus_60px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="77.0" layoutY="95.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_Class_128px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="38.0" layoutY="235.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_eventidea_48px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="38.0" layoutY="624.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_delete_60px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="335.0" layoutY="644.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_layers_32px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1063.0" layoutY="235.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_change_48px_2.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1123.0" layoutY="400.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_calendar_8_100px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1216.0" layoutY="235.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_edit_52px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1236.0" layoutY="105.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_teacher_100px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1327.0" layoutY="407.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_smart_card_48px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1255.0" layoutY="577.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_graduate_48px_1.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="905.0" layoutY="407.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_book_60px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1070.0" layoutY="579.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_calendar_plus_60px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="925.0" layoutY="95.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_Class_128px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="716.0" layoutY="105.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_eventidea_48px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="786.0" layoutY="644.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_delete_60px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="70.0" layoutX="1183.0" layoutY="644.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagem/icons8_layers_32px.png" />
+               </image>
+               <effect>
+                  <MotionBlur />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
